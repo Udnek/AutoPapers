@@ -21,12 +21,12 @@ def replace_placeholder(text, fio_data):
         .replace("{I}", fio_data[1])\
         .replace("{O}", fio_data[2])\
         .replace("{YE}", str(get_year()))
-    if "{TOOK}" in text:
+    if "{POL}" in text:
         if get_sex(fio_data) == 'f':
-            took = 'приняла'
+            took = 'а'
         else:
-            took = 'принял'
-        text = text.replace("{TOOK}", took)
+            took = ''
+        text = text.replace("{POL}", took)
     if len(fio_data) >= 4:
         text = text.replace("{WISHES}", fio_data[3])
     else:
